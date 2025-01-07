@@ -72,39 +72,6 @@ int main() {
 	printf("The condfidence interval is (%f, %f).\n", lower, upper);
 	printf("The margin of error is %f\n", MoE);
 
-	// Repeat for my purposes.
-	int cont;
-	if (isDiff == 0) {
-		cont;
-		printf("Do you want to repeat? ");
-		scanf("%d", &cont);
-	}
-
-	// Enforce input.
-	if ((cont != 1) && (cont != 0)) {
-		printf("Invalid ");
-		scanf("%d", &cont);
-	}
-
-	while (cont == 1) {
-		printf("\nEnter another proportion. ");
-		scanf("%f", &prop);
-		tempVar = (prop*(1-prop)) / n;
-		MoE = zScore * sqrt(tempVar);
-		lower = prop - MoE;
-		upper = prop + MoE;
-		printf("The condfidence interval is (%f, %f).\n", lower, upper);
-        	printf("The margin of error is %f\n", MoE);
-
-		printf("Do you want to repeat? ");
-		scanf("%d", &cont);
-		
-		if ((cont != 1) && (cont != 0)) {
-			printf("Invalid ");
-			scanf("%d", &cont);
-		}
-	}
-
 	return 0;
 
 }
